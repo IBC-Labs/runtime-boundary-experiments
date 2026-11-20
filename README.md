@@ -2,7 +2,7 @@
 
 An IBC Labs repository for reproducible, bounded studies of what instrumented interfaces in text-based LLM and agent applications do—and do not—establish about an interaction.
 
-**Status:** Initial offline participant protocol. This repository remains private while the first public release is prepared. No external replication or live-model result is claimed.
+**Status:** Public offline participant protocol. The source is available on `main`; the first tagged release is still being prepared. No external replication or live-model result is claimed.
 
 ## EXP-001 — Information hiding and runtime visibility
 
@@ -36,9 +36,16 @@ For the restricted observer, provide copies of snapshots 1 and 4 only; withhold 
 
 ## Running the participant kit
 
-The package has **no live model or HTTP mode**. It uses Python 3.10+ and no third-party dependencies. Access requires permission to this private repository until a public release is made.
+The package has **no live model or HTTP mode**. It uses Python 3.10+ and no third-party dependencies. The repository is public; downloading or cloning it does not require GitHub authentication.
 
-On GitHub, choose **Code → Download ZIP**, extract it, and open a terminal in the extracted folder. Alternatively, clone the repository using your usual authenticated GitHub setup. Run:
+On [GitHub](https://github.com/IBC-Labs/runtime-boundary-experiments), choose **Code → Download ZIP**, extract it, and open a terminal in the extracted folder. Alternatively, clone the public repository:
+
+```bash
+git clone https://github.com/IBC-Labs/runtime-boundary-experiments.git
+cd runtime-boundary-experiments
+```
+
+Record the source commit used in your report (`git rev-parse HEAD` for a clone). For a ZIP, download from a specific commit and record that commit's SHA; `main` can change between sessions. Run:
 
 ```bash
 python boundary_probe.py --participant-id tester_01 --out my_results
@@ -71,9 +78,11 @@ A local digest check establishes byte comparison within collected artifacts, **n
 
 We welcome disconfirming examples, alternative interpretations and instrument proposals. Participant reports should state what was observed, what was configured, what is inferred and what remains unknown.
 
+For setup problems or protocol feedback, open a [GitHub issue](https://github.com/IBC-Labs/runtime-boundary-experiments/issues) with the source commit, Python version, command, and a reviewed error summary. Use [PARTICIPANT_REPORT.md](PARTICIPANT_REPORT.md) to prepare findings and consult [REVIEWER_GUIDE.md](REVIEWER_GUIDE.md) for the submission process. Do not attach an unreviewed output directory.
+
 ## Release checklist
 
-- [x] Private IBC-Labs repository and existing GPL-3.0 license
+- [x] Public IBC-Labs repository and existing GPL-3.0 license
 - [x] Offline probe, verifier, and participant/reviewer templates
 - [x] Successful original GitHub Actions checkout, fixture execution and verification ([run](https://github.com/IBC-Labs/runtime-boundary-experiments/actions/runs/44831551431))
 - [x] Fresh-directory execution of files retrieved at the original PR commit and checked against their Git blob IDs
@@ -81,7 +90,7 @@ We welcome disconfirming examples, alternative interpretations and instrument pr
 - [x] WordPress copy reviewed by the project owner; page remains a draft
 - [ ] Complete WordPress visual review
 - [ ] Tag first protocol release
-- [ ] Decide public visibility and cross-link from ibclabs.org
+- [ ] Publish the reviewed WordPress experiment page and cross-link from ibclabs.org
 
 Commit-specific automated results and the merge record are available in [pull request #1](https://github.com/IBC-Labs/runtime-boundary-experiments/pull/1).
 
