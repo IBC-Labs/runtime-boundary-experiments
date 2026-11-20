@@ -1,0 +1,16 @@
+# Local evidence and runtime artifacts
+boundary_results/
+my_results/
+private_live_results/
+*_results/
+run_A.json
+run_B.json
+comparison.json
+run_manifest.json
+.env
+.env.*
+*.key
+*.pem
+__pycache__/
+*.pyc
+.venv/
