@@ -70,7 +70,7 @@ def run(variant):
          "assembled_context_sha256": digest(canonical(messages)),
          "selected_route_at_client_boundary": "synthetic/function-v1",
          "message_count": len(messages)},
-        [], ["No LLM inference occurs in this synthetic run."])
+        [], ["No evidence of a real model route, tokenizer, or provider execution is collected by this fixture."])
     answer = execute_synthetic(messages)
     execution = snapshot(
         "3_execution_participation", trace,
@@ -79,7 +79,7 @@ def run(variant):
         {"client_adapter_invoked": True, "client_adapter_returned": True,
          "execution_kind": "local_synthetic_function",
          "tools_called": [], "remote_inference": False},
-        [], ["No inference, model, or external agent participated."])
+        [], ["These local records do not independently establish what ran outside the instrumented function."])
     body = {"trace_id": trace, "answer": answer}
     egress = snapshot(
         "4_egress", trace,
