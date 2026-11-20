@@ -34,14 +34,14 @@ After the baseline A/B run, compare an observer with ingress and egress only aga
 
 ## Running the participant kit
 
-The EXP-001 Python scripts and templates are being reviewed for inclusion. The intended standard workflow uses Python 3.10+ and no third-party dependencies:
+The offline EXP-001 Python fixture and structural verifier are included in this review branch. This first release has **no live model or HTTP mode**. The standard workflow uses Python 3.10+ and no third-party dependencies:
 
 ```bash
 python boundary_probe.py --participant-id tester_01 --out my_results
 python verify_results.py my_results
 ```
 
-**These commands become runnable from a clone only after `boundary_probe.py` and `verify_results.py` are committed.** Do not treat this initial README as a complete runnable release.
+These commands execute an offline synthetic function, not an LLM. GitHub Actions runs the same fixture and verifier for the draft pull request. Do not upload generated evidence bundles without inspecting them first.
 
 ## Reporting and privacy
 
@@ -55,7 +55,7 @@ We welcome disconfirming examples, alternative interpretations and instrument pr
 
 - [x] Private IBC-Labs repository and existing GPL-3.0 license
 - [x] Local synthetic fixture validation (structural consistency only)
-- [ ] Review and commit participant kit, verifier and report template
+- [x] Commit offline probe, verifier and report template to review branch\n- [ ] Confirm clean GitHub Actions run and complete independent checkout test
 - [ ] Review privacy and submission policy
 - [ ] Verify clean-clone reproducibility
 - [ ] Tag first protocol release
