@@ -55,7 +55,8 @@ We welcome disconfirming examples, alternative interpretations and instrument pr
 
 - [x] Private IBC-Labs repository and existing GPL-3.0 license
 - [x] Local synthetic fixture validation (structural consistency only)
-- [x] Commit offline probe, verifier and report template to review branch\n- [ ] Confirm clean GitHub Actions run and complete independent checkout test
+- [x] Commit offline probe, verifier and report template to review branch
+- [ ] Confirm clean GitHub Actions run and complete independent checkout test
 - [ ] Review privacy and submission policy
 - [ ] Verify clean-clone reproducibility
 - [ ] Tag first protocol release
