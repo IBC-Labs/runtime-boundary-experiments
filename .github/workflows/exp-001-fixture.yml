@@ -1,0 +1,26 @@
+name: EXP-001 offline protocol check
+
+on:
+  push:
+    branches: [main, exp-001-initial-publication]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fixture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run offline fixture
+        run: python boundary_probe.py --participant-id ci_fixture --out boundary_results
+      - name: Verify generated snapshots
+        run: python verify_results.py boundary_results
+      - name: Check malformed and inconsistent evidence
+        run: python -m unittest -v test_verify_results.py
