@@ -22,3 +22,5 @@ jobs:
         run: python boundary_probe.py --participant-id ci_fixture --out boundary_results
       - name: Verify generated snapshots
         run: python verify_results.py boundary_results
+      - name: Check malformed and inconsistent evidence
+        run: python -m unittest -v test_verify_results.py
