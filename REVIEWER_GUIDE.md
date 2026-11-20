@@ -16,4 +16,4 @@ A **reproduced local PASS** means only that the same protocol fixture and struct
 
 ## Submission
 
-Submit the reviewed participant report as a pull request or issue after the first public protocol release. Do not submit unredacted live run bundles. Note redactions, protocol version, environment, and any deviation from standard steps.
+Submit the reviewed participant report as a pull request or issue in this public repository. Include the exact source commit, protocol version, environment, and any deviation from standard steps; include the release tag if one was used. Reports from `main` are welcome before the first tagged release, provided the exact commit is recorded. Review every attachment for sensitive content before submission and note any redactions. Do not submit unredacted live run bundles.
